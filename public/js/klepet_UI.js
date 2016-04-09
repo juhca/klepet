@@ -26,8 +26,8 @@ function dodajSliko(input)
 
 function procesirajVnosUporabnika(klepetApp, socket) {
   var sporocilo = $('#poslji-sporocilo').val();
-  sporocilo = dodajSmeske(sporocilo);
   sporocilo = dodajSliko(sporocilo);
+  sporocilo = dodajSmeske(sporocilo);
   var sistemskoSporocilo;
 
   if (sporocilo.charAt(0) == '/') {
