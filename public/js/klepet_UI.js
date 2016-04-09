@@ -101,6 +101,19 @@ $(document).ready(function() {
     }
   });
 
+  socket.on('dregljaj', function() {
+      $("#vsebina").jrumble({
+      	x: 0,
+      	y: 0,
+      	rotation: 5
+      });
+      $("#vsebina").trigger('startRumble');
+      setTimeout(function(){
+        $("#vsebina").trigger('stopRumble');
+      }, 1500);
+  })
+
+
   setInterval(function() {
     socket.emit('kanali');
     socket.emit('uporabniki', {kanal: trenutniKanal});
