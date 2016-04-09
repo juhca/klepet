@@ -99,6 +99,15 @@ $(document).ready(function() {
     for (var i=0; i < uporabniki.length; i++) {
       $('#seznam-uporabnikov').append(divElementEnostavniTekst(uporabniki[i]));
     }
+      // ko klikne na uporabnika v naše tekstovno polje vnese /zasebno + vzdevek
+    $('#seznam-uporabnikov div').click(function(event) {
+      var ime = $(event.target).text();
+      if(ime != trenutniVzdevek) $("#poslji-sporocilo").val("/zasebno "+"\""+ime+"\""+" ");
+      //document.getElementById("poslji-sporocilo").value = ;
+      else alert("Samemu sebi ne moraš poslati zasebno sporočilo.");
+      $('#poslji-sporocilo').focus();
+    });
+    
   });
 
   setInterval(function() {
